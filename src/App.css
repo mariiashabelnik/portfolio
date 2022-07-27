@@ -1,12 +1,29 @@
 .container {
-  border: 2px solid red;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.nav {
-  background-color: rgb(84, 84, 84);
+.nav .container {
   height: 3em;
+}
+
+.nav {
+  background-color: rgb(47, 46, 58);
+  height: 3em;
+  -webkit-box-shadow: 0px 3px 10px 1px rgba(122, 122, 122, 0.59);
+  -moz-box-shadow: 0px 3px 10px 1px rgba(122, 122, 122, 0.59);
+  box-shadow: 0px 3px 10px 1px rgba(122, 122, 122, 0.59);
+}
+
+.nav a {
+  text-decoration: none;
+  color: rgb(229, 229, 255);
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 5px #03e9f4;
 }
 
 .nav-items {
@@ -22,4 +39,41 @@
 
 .menu-items div {
   margin-right: 1em;
+}
+
+.logo {
+  font-size: 2em;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger-menu {
+  background-color: rgba(84, 84, 84, 0.9);
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  backdrop-filter: blur(3px);
+  top: 3em;
+  bottom: 0;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger-menu a {
+  font-size: 2em;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: inline;
+  }
+  .menu-items {
+    display: none;
+  }
 }
