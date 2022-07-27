@@ -4,17 +4,45 @@ import { useState } from "react";
 
 function Header() {
   const [isOpen, setOpen] = useState(false);
+  const menuTimeout = 400;
 
   const hamburgerMenu = (
     <div className="hamburger-menu">
       <div>
-        <Link to="/">.me()</Link>
+        <Link
+          onClick={() => {
+            setTimeout(() => {
+              setOpen(false);
+            }, menuTimeout);
+          }}
+          to="/"
+        >
+          .me()
+        </Link>
       </div>
       <div>
-        <Link to="/experience">.experience()</Link>
+        <Link
+          onClick={() => {
+            setTimeout(() => {
+              setOpen(false);
+            }, menuTimeout);
+          }}
+          to="/experience"
+        >
+          .experience()
+        </Link>
       </div>
       <div>
-        <Link to="/contact">.contact()</Link>
+        <Link
+          onClick={() => {
+            setTimeout(() => {
+              setOpen(false);
+            }, menuTimeout);
+          }}
+          to="/contact"
+        >
+          .contact()
+        </Link>
       </div>
     </div>
   );
@@ -27,7 +55,7 @@ function Header() {
             <Link to="/">MS.</Link>
           </div>
           <div className="hamburger">
-            <Hamburger toggled={isOpen} toggle={setOpen} />
+            <Hamburger color="#e5e5ff" toggled={isOpen} toggle={setOpen} />
           </div>
 
           <div className="menu-items ">
