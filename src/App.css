@@ -1,0 +1,25 @@
+.container {
+  border: 2px solid red;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.nav {
+  background-color: rgb(84, 84, 84);
+  height: 3em;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.menu-items {
+  display: flex;
+}
+
+.menu-items div {
+  margin-right: 1em;
+}
