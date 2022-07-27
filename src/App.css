@@ -45,6 +45,10 @@
   font-weight: bold;
 }
 
+.logo a {
+  text-shadow: 0 0 5px #ccff00, 0 0 15px #ccff00, 0 0 30px #ccff00;
+}
+
 .hamburger {
   display: none;
 }
