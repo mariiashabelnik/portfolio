@@ -25,7 +25,7 @@ function Home() {
     <ScrollContainer>
       <ScrollPage>
         <Animator animation={batch(Fade(), Sticky(), MoveOut(0, 200))}>
-          <span>Let me show you scroll animation 😀</span>
+          <span>Hello, my name is Mariia 😀</span>
         </Animator>
       </ScrollPage>
 
