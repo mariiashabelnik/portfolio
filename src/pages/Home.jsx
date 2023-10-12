@@ -27,17 +27,20 @@ function Home() {
         <Animator animation={batch(Fade(), Sticky(), MoveOut(0, 200))}>
           <span>Hello, my name is Mariia 😀</span>
         </Animator>
+        <span style={{ fontSize: "40px" }}>
+          <Animator animation={MoveIn(-1000, 0)}>Hello Guys 👋🏻</Animator>
+        </span>
       </ScrollPage>
 
       <ScrollPage>
         <Animator animation={ZoomInScrollOut}>
-          <span style={{ fontSize: "40px" }}>I'm FadeUpScrollOut ✨</span>
+          <span style={{ fontSize: "40px" }}>I'm Frontend developer ✨</span>
         </Animator>
       </ScrollPage>
 
       <ScrollPage>
         <Animator animation={FadeUp}>
-          <span style={{ fontSize: "40px" }}>I'm FadeUp ⛅️</span>
+          <span style={{ fontSize: "40px" }}>I'm Webbdesigner ⛅️</span>
         </Animator>
       </ScrollPage>
 
@@ -51,7 +54,6 @@ function Home() {
           }}
         >
           <span style={{ fontSize: "40px" }}>
-            <Animator animation={MoveIn(-1000, 0)}>Hello Guys 👋🏻</Animator>
             <Animator animation={MoveIn(1000, 0)}>Nice to meet you 🙋🏻‍♀️</Animator>
             - I'm Dante Chun -
             <Animator animation={MoveOut(1000, 0)}>Good bye ✋🏻</Animator>

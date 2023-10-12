@@ -1,79 +1,58 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Turn as Hamburger } from "hamburger-react";
 import { useState } from "react";
 
 function Header() {
   const [isOpen, setOpen] = useState(false);
   const menuTimeout = 400;
+  const location = useLocation();
 
-  const hamburgerMenu = (
-    <div className="hamburger-menu">
-      <div>
-        <Link
-          onClick={() => {
-            setTimeout(() => {
-              setOpen(false);
-            }, menuTimeout);
-          }}
-          to="/"
-        >
-          .me()
+  const menu = [
+    { link: "/", title: ".me()" },
+    { link: "/experience", title: ".experience()" },
+    { link: "/contact", title: ".contact()" },
+  ];
+
+  const menuUI = menu.map((item) => {
+    let className = "drop-shadow-light hover:drop-shadow-doublelight";
+    if (location.pathname === item.link) {
+      className += " text-white";
+    } else {
+      className += " text-white/40";
+    }
+    return (
+      <li key={item.link}>
+        <Link className={className} to={item.link}>
+          {item.title}
         </Link>
-      </div>
-      <div>
-        <Link
-          onClick={() => {
-            setTimeout(() => {
-              setOpen(false);
-            }, menuTimeout);
-          }}
-          to="/experience"
-        >
-          .experience()
-        </Link>
-      </div>
-      <div>
-        <Link
-          onClick={() => {
-            setTimeout(() => {
-              setOpen(false);
-            }, menuTimeout);
-          }}
-          to="/contact"
-        >
-          .contact()
-        </Link>
-      </div>
-    </div>
-  );
+      </li>
+    );
+  });
 
   return (
-    <div className="nav">
-      <div className="container">
-        <div className=" nav-items">
-          <div className="logo">
-            <Link to="/">MS.</Link>
+    <header className="sticky top-0 z-50 backdrop-blur-sm	 bg-bgColor/90 ">
+      <div className="container mx-auto">
+        <nav className="flex items-center mx-4 py-4">
+          <div className="flex-none text-4xl font-black">
+            <Link
+              className=" drop-shadow-doublelight hover:drop-shadow-light"
+              to="/"
+            >
+              MS.
+            </Link>
           </div>
-          <div className="hamburger">
+          {/* <div className="hamburger">
             <Hamburger color="#e5e5ff" toggled={isOpen} toggle={setOpen} />
+          </div> */}
+          <div className="grow"></div>
+          <div className="flex-none  ">
+            <ul className="flex flex-row gap-4 text-lg">{menuUI}</ul>
           </div>
-
-          <div className="menu-items ">
-            <div>
-              <Link to="/">.me()</Link>
-            </div>
-            <div>
-              <Link to="/experience">.experience()</Link>
-            </div>
-            <div>
-              <Link to="/contact">.contact()</Link>
-            </div>
-          </div>
-        </div>
+        </nav>
 
         {isOpen && hamburgerMenu}
       </div>
-    </div>
+    </header>
   );
 }
 

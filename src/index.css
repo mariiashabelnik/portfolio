@@ -1,6 +1,8 @@
+@import "react-image-gallery/styles/css/image-gallery.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
-  margin: 0;
-  font-family: "Roboto Mono", monospace;
   background-color: #302f39;
-  color: white;
 }
