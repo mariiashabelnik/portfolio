@@ -33,15 +33,16 @@ function Experiance() {
           <div className="text-sm">
             <p>{item.info}</p>
           </div>
-          <Tags listOfTags={item.tags} />
-          <div className="grow"></div>
-          <div className=" text-right">
+          <div className=" text-right mt-4">
             <Link
               className=" drop-shadow-doublelight hover:drop-shadow-light "
               to={`/experience/${item.id}`}
             >
               read more
             </Link>
+          </div>
+          <div className="">
+            <Tags listOfTags={item.tags} />
           </div>
         </div>
       </section>

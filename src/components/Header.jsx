@@ -12,6 +12,7 @@ function Header() {
     { link: "/experience", title: ".experience()" },
     { link: "/contact", title: ".contact()" },
   ];
+  //ist'llet Contact -> CV, kontakt kan vara i footer p[ alla sidor]
 
   const menuUI = menu.map((item) => {
     let className = "drop-shadow-light hover:drop-shadow-doublelight";

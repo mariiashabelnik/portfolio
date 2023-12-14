@@ -6,7 +6,7 @@ function Tags({ listOfTags }) {
       </div>
     );
   });
-  return <div className="text-xs flex gap-4 mt-6 ">{tagList}</div>;
+  return <div className="text-xs flex gap-4 mt-6 flex-wrap">{tagList}</div>;
 }
 
 export default Tags;

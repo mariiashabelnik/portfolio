@@ -3,7 +3,7 @@ import { atom } from "recoil";
 const experianceList = [
   {
     id: "46bf76ae-8915-4e5d-ae92-4151be80e75a",
-    title: "Netzero web",
+    title: "Netzero",
     info: "Lorem ipsum dolor, sit amet consectetur adipisicing   elit. Beatae cumque laborum, placeat nobis fugit nemo ipsa voluptates error quo possimus ea velit quos voluptatum magnam id eius quam accusamus. Eum blanditiis aperiam minus inventore laboriosam, et vel ipsam perspiciatis a facilis cum, iure alias recusandae dolorem adipisci illum. Quo maxime nisi minus mollitia praesentium cumque, temporibus incidunt nulla culpa eligendi consequatur doloremque repudiandae aspernatur quas necessitatibus tenetur. Similique fuga rerum provident distinctio doloremque qui accusamus, sequi voluptate eveniet voluptatum autem odio placeat quasi temporibus quas nulla laborum sunt tenetur dolorum, incidunt error porro amet modi? Temporibus amet optio mollitia omnis?",
     img: [
       "/img/placeholder.png",
@@ -11,7 +11,7 @@ const experianceList = [
       "/img/placeholder.png",
       "/img/placeholder.png",
     ],
-    tags: ["react", "vite", "wordpress"],
+    tags: ["react", "typescript", "vite", "chakraUI", "tailwindcss"],
     link: "https://www.net0.se",
   },
   {
