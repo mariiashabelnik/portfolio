@@ -49,8 +49,9 @@ function Experiance() {
   });
 
   return (
-    <div className="container mx-auto my-10 px-6">
-      <h1>Welcome to Experiance</h1>
+    <div className="relative">
+      <div id="experience" className=" absolute -top-16 "></div>
+      <h1>Welcome to Experience</h1>
       <div className="py-4">{experianceListUI}</div>
     </div>
   );

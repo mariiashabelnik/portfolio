@@ -1,16 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
-import { Turn as Hamburger } from "hamburger-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Divide as Hamburger } from "hamburger-react";
 
 function Header() {
   const [isOpen, setOpen] = useState(false);
+
   const menuTimeout = 400;
   const location = useLocation();
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+  }, [isOpen]);
+
   const menu = [
-    { link: "/", title: ".me()" },
-    { link: "/experience", title: ".experience()" },
-    { link: "/contact", title: ".contact()" },
+    { link: "/#about", title: ".me()" },
+    { link: "/#experience", title: ".experience()" },
+    { link: "/#contact", title: ".contact()" },
   ];
 
   const menuUI = menu.map((item) => {
@@ -21,38 +26,70 @@ function Header() {
       className += " text-white/40";
     }
     return (
-      <li key={item.link}>
-        <Link className={className} to={item.link}>
+      <li className="my-10 text-xl md:my-0 md:text-base" key={item.link}>
+        <Link
+          className={className}
+          onClick={() => {
+            setOpen(false);
+          }}
+          to={item.link}
+        >
           {item.title}
         </Link>
       </li>
     );
   });
 
-  return (
-    <header className="sticky top-0 z-50 backdrop-blur-sm	 bg-bgColor/90 ">
-      <div className="container mx-auto">
-        <nav className="flex items-center mx-4 py-4">
-          <div className="flex-none text-4xl font-black">
-            <Link
-              className=" drop-shadow-doublelight hover:drop-shadow-light"
-              to="/"
-            >
-              MS.
-            </Link>
-          </div>
-          {/* <div className="hamburger">
-            <Hamburger color="#e5e5ff" toggled={isOpen} toggle={setOpen} />
-          </div> */}
-          <div className="grow"></div>
-          <div className="flex-none  ">
-            <ul className="flex flex-row gap-4 text-lg">{menuUI}</ul>
-          </div>
-        </nav>
+  const headerClasses = ["sticky", "top-0", "z-40", "backdrop-blur-sm", "h-16"];
+  const logoClasses = ["hover:drop-shadow-light"];
+  const overlayMenu = [
+    "bg-black/90",
+    "z-50",
+    "fixed",
+    "left-0",
+    "right-0",
+    "top-16",
+    "h-screen",
+    "backdrop-blur-sm",
+    "p-2",
+  ];
+  if (isOpen) {
+    headerClasses.push("bg-black/90");
+    logoClasses.push("drop-shadow-yellow");
+  } else {
+    headerClasses.push("bg-bgColor/90");
+    logoClasses.push("drop-shadow-doublelight");
+  }
 
-        {isOpen && hamburgerMenu}
-      </div>
-    </header>
+  return (
+    <>
+      {isOpen && (
+        <div className={overlayMenu.join(" ")}>
+          <div className=" h-[calc(100vh-20rem)]  flex flex-col justify-center">
+            <ul>{menuUI}</ul>
+          </div>
+        </div>
+      )}
+      <header className={headerClasses.join(" ")}>
+        <div className="container mx-auto h-full">
+          <nav className="flex items-center h-full px-2">
+            <div className="flex-none text-4xl font-black ">
+              <Link className={logoClasses.join(" ")} to="/#start">
+                MS.
+              </Link>
+            </div>
+
+            <div className="grow"></div>
+            <div className="flex-none hidden md:block ">
+              <ul className="flex flex-row gap-4 text-lg">{menuUI}</ul>
+            </div>
+            <div className="flex-none block md:hidden">
+              <Hamburger toggled={isOpen} toggle={setOpen} duration={0.9} />
+            </div>
+          </nav>
+        </div>
+      </header>
+    </>
   );
 }
 

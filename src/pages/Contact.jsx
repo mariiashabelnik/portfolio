@@ -1,7 +1,8 @@
 function Contact() {
   return (
-    <div className="container content">
-      <h1>Welcome to Contact</h1>
+    <div className="relative">
+      <div id="contact" className=" absolute -top-16 "></div>
+      <h1>Welcome to C#ontact</h1>
     </div>
   );
 }

@@ -13,6 +13,7 @@ export default {
       },
       dropShadow: {
         light: "0 0 5px theme('colors.indigo.800')",
+        yellow: "0 0 9px theme('colors.lime.400')",
         doublelight: [
           "0 0 5px theme('colors.lime.400')",
           "0 0 15px theme('colors.yellow.400')",
