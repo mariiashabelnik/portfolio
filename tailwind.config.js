@@ -6,6 +6,19 @@ export default {
       sans: ["Roboto Mono", "system-ui"],
       headline: ["Roboto Mono", "system-ui"],
     },
+    fontSize: {
+      title: ["5rem", { fontWeight: "800" }],
+      subT: ["3.5rem", { fontWeight: "800" }],
+      subTMini: ["1.4rem", { fontWeight: "800" }],
+      tags: ["0.8rem", { fontWeight: "400" }],
+      sm: "0.8rem",
+      base: "1rem",
+      xl: "1.25rem",
+      "2xl": "1.563rem",
+      "3xl": "1.953rem",
+      "4xl": "2.441rem",
+      "5xl": "3.052rem",
+    },
     extend: {
       colors: {
         neon: "#ccff00",

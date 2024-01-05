@@ -11,7 +11,7 @@ const experianceList = [
       "/img/placeholder.png",
       "/img/placeholder.png",
     ],
-    tags: ["react", "vite", "wordpress"],
+    tags: ["React", "Vite", "Wordpress"],
     link: "https://www.net0.se",
   },
   {
@@ -69,3 +69,24 @@ const experianceList = [
 ];
 
 export const projectsAtom = atom({ key: "projects", default: experianceList });
+export const skillsAtom = atom({
+  key: "skills",
+  default: {
+    languages: ["JavaScript", "TypeScript", "SQL", "HTML", "CSS"],
+    frameworks: [
+      "React",
+      "Node.js",
+      "Next.js",
+      "Vite.js",
+      "Apollo GraphQL",
+      "Tailwind",
+      "Material UI",
+      "Chakra UI",
+      "Axios & Fetch",
+      "Framer Motion",
+      "WordPress",
+      "Shopify",
+    ],
+    tools: ["GIT", "MySQL", "Docker"],
+  },
+});

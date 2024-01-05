@@ -30,7 +30,7 @@ function Experiance() {
               src={item.img[0]}
             />
           </div>
-          <div className="text-sm">
+          <div className="text-sm mb-6">
             <p>{item.info}</p>
           </div>
           <Tags listOfTags={item.tags} />
