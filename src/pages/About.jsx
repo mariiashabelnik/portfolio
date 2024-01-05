@@ -8,7 +8,9 @@ function About() {
   return (
     <div className="relative">
       <div id="about" className=" absolute -top-16 "></div>
-      <h2 className="mb-2 text-subT"> About</h2>
+      <h2 className="mb-2 text-subTPhone md:text-subT font-headline">
+        About<span className=" text-highlight">.</span>
+      </h2>
       <div className="flex flex-col md:flex-row">
         <div className="basis-2/3 text-base">
           <p>

@@ -40,7 +40,7 @@ function Header() {
     );
   });
 
-  const headerClasses = ["sticky", "top-0", "z-40", "backdrop-blur-sm", "h-16"];
+  const headerClasses = ["sticky", "top-0", "z-40", "backdrop-blur-md", "h-16"];
   const logoClasses = ["hover:drop-shadow-light"];
   const overlayMenu = [
     "bg-black/90",
@@ -73,7 +73,7 @@ function Header() {
       <header className={headerClasses.join(" ")}>
         <div className="container mx-auto h-full">
           <nav className="flex items-center h-full px-2">
-            <div className="flex-none text-4xl font-black ">
+            <div className="flex-none text-3xl md:text-4xl font-black font-headline ">
               <Link className={logoClasses.join(" ")} to="/#start">
                 MS.
               </Link>

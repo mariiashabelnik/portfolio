@@ -9,7 +9,7 @@ function Experiance() {
   const experianceListUI = experianceList.map((item, key) => {
     const position = key % 2;
 
-    const imgClasses = ["flex-1", "hidden", "md:block"];
+    const imgClasses = ["basis-1/3", "hidden", "md:block"];
 
     if (position === 1) {
       imgClasses.push("md:order-last");
@@ -20,9 +20,11 @@ function Experiance() {
         <div className={imgClasses.join(" ")}>
           <img className="rounded-md" src={item.img[0]} />
         </div>
-        <div className="flex-1 flex flex-col">
+        <div className="basis-2/3 flex flex-col">
           <div>
-            <h2 className="text-2xl mb-4"> {item.title}</h2>
+            <h2 className="text-subTMiniPhone md:text-subTMini mb-4 ">
+              {item.title}
+            </h2>
           </div>
           <div>
             <img
@@ -30,7 +32,7 @@ function Experiance() {
               src={item.img[0]}
             />
           </div>
-          <div className="text-sm mb-6">
+          <div className="text-base mb-6 line-clamp-3 md:line-clamp-6">
             <p>{item.info}</p>
           </div>
           <Tags listOfTags={item.tags} />
@@ -51,7 +53,9 @@ function Experiance() {
   return (
     <div className="relative">
       <div id="experience" className=" absolute -top-16 "></div>
-      <h1>Welcome to Experience</h1>
+      <h2 className=" text-subTPhone md:text-subT font-headline">
+        Experience<span className=" text-highlight">.</span>
+      </h2>
       <div className="py-4">{experianceListUI}</div>
     </div>
   );

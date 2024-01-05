@@ -6,3 +6,6 @@
 body {
   background-color: #031417;
 }
+::selection {
+  background: #7d9c00b1;
+}

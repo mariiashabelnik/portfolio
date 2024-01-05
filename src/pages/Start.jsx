@@ -4,8 +4,12 @@ function Start() {
       <div id="start" className="absolute  -top-16 "></div>
 
       <div>
-        <h1 className=" text-title">Hello, my name is Maria.</h1>
-        <h2 className=" text-subT">I'm a Frontend Engineer</h2>
+        <h1 className="text-titlePhone md:text-title md:leading-tight mb-2 font-headline">
+          Hello, my name is Maria<span className=" text-highlight">.</span>
+        </h1>
+        <h2 className="text-subTPhone md:text-subT font-headline">
+          I'm a<span className=" text-highlight"> Frontend Engineer</span>
+        </h2>
         <p className="text-base">
           In my recent journey as a junior frontend engineer, I've gained
           valuable experience through involvement in various projects within

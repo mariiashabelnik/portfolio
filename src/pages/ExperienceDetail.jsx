@@ -38,7 +38,7 @@ function ExperianceDetail() {
   return (
     <div className="container mx-auto my-10 px-6">
       <button
-        className="text-4xl"
+        className="text-4xl "
         aria-label="Back"
         onClick={() => {
           navigate(-1);
@@ -46,14 +46,16 @@ function ExperianceDetail() {
       >
         <BackButton />
       </button>
-      <div className="flex">
+      <div className="flex flex-col">
         <div className="flex-1">
-          <h1>Project: {myProject.title}</h1>
+          <h1 className=" text-subTPhone md:text-subT">
+            Project: {myProject.title}
+          </h1>
         </div>
-
-        <Tags listOfTags={myProject.tags} />
+        <div className="flex-1 mt-2 mb-6">
+          <Tags listOfTags={myProject.tags} />
+        </div>{" "}
       </div>
-      {linkUI}
       <div className="flex flex-col md:flex-row gap-4">
         <div className="flex-1">
           <ImageGallery
@@ -65,8 +67,13 @@ function ExperianceDetail() {
             items={projectImg}
           />
         </div>
-        <div className="flex-1">{myProject.info}</div>
-      </div>
+        <div className="flex-1 text-base">
+          {myProject.info}
+          <div className=" drop-shadow-doublelight hover:drop-shadow-light my-2 text-end">
+            {linkUI}
+          </div>
+        </div>
+      </div>{" "}
     </div>
   );
 }
