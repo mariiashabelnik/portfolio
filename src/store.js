@@ -16,6 +16,7 @@ const experianceList = [
       "Node.js",
       "Postgres",
       "Prisma",
+      "Javascript",
     ],
     link: "https://www.net0.se",
   },
