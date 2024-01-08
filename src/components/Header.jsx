@@ -75,7 +75,7 @@ function Header() {
           <nav className="flex items-center h-full px-2">
             <div className="flex-none text-3xl md:text-4xl font-black font-headline ">
               <Link className={logoClasses.join(" ")} to="/#start">
-                MW
+                MW.
               </Link>
             </div>
 
