@@ -6,7 +6,9 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ExperianceDetail from "./pages/ExperienceDetail";
+import FullPage from "./pages/FullPage";
 import { RecoilRoot } from "recoil";
+import ScrollToAnchor from "./components/ScrollToAnchor";
 
 function App() {
   return (
@@ -14,10 +16,11 @@ function App() {
       <RecoilRoot>
         <main className=" min-h-screen">
           <Header />
+          <ScrollToAnchor />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/" element={<FullPage />} />
+            {/* <Route path="/experience" element={<Experience />} />
+            <Route path="/contact" element={<Contact />} />*/}
             <Route path="/experience/:id" element={<ExperianceDetail />} />
           </Routes>
           <Footer />
