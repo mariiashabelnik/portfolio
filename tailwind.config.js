@@ -4,8 +4,9 @@ export default {
   theme: {
     fontFamily: {
       sans: ["Ubuntu Mono", "system-ui"],
-      headline: ["Tektur", "system-ui"],
+      logo: ["Dela Gothic One", "system-ui"],
       tags: ["Ubuntu Mono", "system-ui"],
+      headline: ["Tektur", "system-ui"],
     },
     fontSize: {
       title: ["5rem", { lineHeight: "5rem", fontWeight: "900" }],

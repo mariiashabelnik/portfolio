@@ -73,7 +73,7 @@ function Header() {
       <header className={headerClasses.join(" ")}>
         <div className="container mx-auto h-full">
           <nav className="flex items-center h-full px-2">
-            <div className="flex-none text-3xl md:text-4xl font-black font-headline ">
+            <div className="flex-none text-3xl md:text-4xl font-black font-logo ">
               <Link className={logoClasses.join(" ")} to="/#start">
                 MW
               </Link>
