@@ -53,10 +53,12 @@ function Experiance() {
   return (
     <div className="relative">
       <div id="experience" className=" absolute -top-16 "></div>
-      <h2 className=" text-subTPhone md:text-subT font-headline">
-        Experience<span className=" text-highlight">.</span>
-      </h2>
-      <div className="py-4">{experianceListUI}</div>
+      <div className=" h-screen">
+        <h2 className=" text-subTPhone md:text-subT font-headline">
+          Experience<span className=" text-highlight">.</span>
+        </h2>
+        <div className="py-4">{experianceListUI}</div>
+      </div>
     </div>
   );
 }

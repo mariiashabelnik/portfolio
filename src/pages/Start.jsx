@@ -3,7 +3,7 @@ function Start() {
     <div className="relative">
       <div id="start" className="absolute  -top-16 "></div>
 
-      <div>
+      <div className=" h-screen">
         <h1 className="text-titlePhone md:text-title md:leading-tight mb-2 font-headline">
           Hello, my name is Maria<span className=" text-highlight">.</span>
         </h1>

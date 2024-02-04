@@ -4,6 +4,8 @@ import { projectsAtom } from "../store";
 import ImageGallery from "react-image-gallery";
 import Tags from "../components/Tags";
 import { IoChevronBackOutline as BackButton } from "react-icons/io5";
+import LeftNav from "../components/LeftNav";
+import RightNav from "../components/RightNav";
 
 function ExperianceDetail() {
   const { id } = useParams();
@@ -48,13 +50,13 @@ function ExperianceDetail() {
       </button>
       <div className="flex flex-col">
         <div className="flex-1">
-          <h1 className=" text-subTPhone md:text-subT">
+          <h1 className=" text-subTPhone md:text-subT font-headline">
             Project: {myProject.title}
           </h1>
         </div>
         <div className="flex-1 mt-2 mb-6">
           <Tags listOfTags={myProject.tags} />
-        </div>{" "}
+        </div>
       </div>
       <div className="flex flex-col md:flex-row gap-4">
         <div className="flex-1">
@@ -65,6 +67,12 @@ function ExperianceDetail() {
             slideDuration={1000}
             slideInterval={4000}
             items={projectImg}
+            renderLeftNav={(onClick, disabled) => (
+              <LeftNav onClick={onClick} disabled={disabled} />
+            )}
+            renderRightNav={(onClick, disabled) => (
+              <RightNav onClick={onClick} disabled={disabled} />
+            )}
           />
         </div>
         <div className="flex-1 text-base">
