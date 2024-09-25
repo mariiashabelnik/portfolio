@@ -54,7 +54,7 @@ export const skillsAtom = atom({
       "MySQL",
       "Docker",
       "Visual Studio Code",
-      "Postman API",
+      "Rapid API",
       "TablePlus",
       "Trello",
       "Figma",

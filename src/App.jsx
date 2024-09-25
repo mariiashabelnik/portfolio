@@ -1,8 +1,5 @@
 //import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Experience from "./pages/Experience";
-import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ExperianceDetail from "./pages/ExperienceDetail";
@@ -12,7 +9,7 @@ import ScrollToAnchor from "./components/ScrollToAnchor";
 
 function App() {
   return (
-    <div className="text-white">
+    <div className=" text-gray-600 ">
       <RecoilRoot>
         <main className=" min-h-screen">
           <Header />

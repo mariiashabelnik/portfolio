@@ -13,20 +13,21 @@ function Header() {
   }, [isOpen]);
 
   const menu = [
-    { link: "/#about", title: ".me()" },
-    { link: "/#experience", title: ".experience()" },
-    { link: "/#contact", title: ".contact()" },
+    { link: "/#about", title: ".about( )" },
+    { link: "/#experience", title: ".projects( )" },
+    { link: "/#contact", title: ".contact( )" },
   ];
 
   const menuUI = menu.map((item) => {
-    let className = "drop-shadow-light hover:drop-shadow-doublelight";
-    if (location.pathname === item.link) {
-      className += " text-white";
+    let className = "drop-shadow-doublelight hover:drop-shadow-active";
+    console.log(location);
+    if (`/${location.hash}` === item.link) {
+      className += " text-white  ";
     } else {
-      className += " text-white/40";
+      className += " text-gray-500";
     }
     return (
-      <li className="my-10 text-xl md:my-0 md:text-base" key={item.link}>
+      <li className="my-10 text-xl md:my-0 md:text-base " key={item.link}>
         <Link
           className={className}
           onClick={() => {
@@ -40,10 +41,19 @@ function Header() {
     );
   });
 
-  const headerClasses = ["sticky", "top-0", "z-40", "backdrop-blur-md", "h-16"];
+  const headerClasses = [
+    "sticky",
+    "top-0",
+    "z-40",
+    "backdrop-blur-sm",
+    "h-16",
+    "border-b-[1px]",
+    "border-white",
+    "rounded-b-[1rem]",
+  ];
   const logoClasses = ["hover:drop-shadow-light"];
   const overlayMenu = [
-    "bg-black/90",
+    "bg-white/90",
     "z-50",
     "fixed",
     "left-0",
@@ -54,11 +64,11 @@ function Header() {
     "p-2",
   ];
   if (isOpen) {
-    headerClasses.push("bg-black/90");
-    logoClasses.push("drop-shadow-yellow");
+    headerClasses.push("bg-white/70");
+    logoClasses.push("drop-shadow-gray");
   } else {
-    headerClasses.push("bg-bgColor/90");
-    logoClasses.push("drop-shadow-doublelight");
+    headerClasses.push("bg-bgColor/70");
+    logoClasses.push("drop-shadow-active");
   }
 
   return (
@@ -71,11 +81,11 @@ function Header() {
         </div>
       )}
       <header className={headerClasses.join(" ")}>
-        <div className="container mx-auto h-full">
-          <nav className="flex items-center h-full px-2">
-            <div className="flex-none text-3xl md:text-4xl font-black font-logo ">
+        <div className="container mx-auto h-full max-w-7xl ">
+          <nav className="flex items-center h-full px-10 ">
+            <div className="flex-none text-3xl md:text-4xl font-logo text-[#6d6d6d] ">
               <Link className={logoClasses.join(" ")} to="/#start">
-                MW
+                MS
               </Link>
             </div>
 

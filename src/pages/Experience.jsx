@@ -7,43 +7,35 @@ function Experiance() {
   const experianceList = useRecoilValue(projectsAtom);
 
   const experianceListUI = experianceList.map((item, key) => {
-    const position = key % 2;
-
-    const imgClasses = ["basis-1/3", "hidden", "md:block"];
-
-    if (position === 1) {
-      imgClasses.push("md:order-last");
-    }
-
     return (
-      <section className="flex flex-col md:flex-row gap-4 mb-12" key={item.id}>
-        <div className={imgClasses.join(" ")}>
-          <img className="rounded-md" src={item.img[0]} />
-        </div>
-        <div className="basis-2/3 flex flex-col">
-          <div>
-            <h2 className="text-subTMiniPhone md:text-subTMini mb-4 ">
-              {item.title}
-            </h2>
+      <section
+        className="flex-1 gap-4 mb-12 bg-[#e0e0e0] border rounded-3xl shadow-box"
+        key={item.id}
+      >
+        <div>
+          <div className="p-4">
+            <img className="rounded-3xl" src={item.img[0]} />
           </div>
-          <div>
-            <img
-              className="block md:hidden mb-4 rounded-md"
-              src={item.img[0]}
-            />
-          </div>
-          <div className="text-base mb-6 line-clamp-3 md:line-clamp-6">
-            <p>{item.info}</p>
-          </div>
-          <Tags listOfTags={item.tags} />
-          <div className="grow"></div>
-          <div className=" text-right">
-            <Link
-              className=" drop-shadow-doublelight hover:drop-shadow-light "
-              to={`/experience/${item.id}`}
-            >
-              read more
-            </Link>
+          <div className="flex flex-col px-4 pt-4 pb-8">
+            <div>
+              <h2 className="text-subTMiniPhone md:text-subTMini mb-4 ">
+                {item.title}
+              </h2>
+            </div>
+
+            <div className="text-base mb-6 line-clamp-3 md:line-clamp-6">
+              <p>{item.info}</p>
+            </div>
+            <Tags listOfTags={item.tags} />
+            <div className="grow"></div>
+            <div className=" text-right">
+              <Link
+                className=" drop-shadow-doublelight hover:drop-shadow-light "
+                to={`/experience/${item.id}`}
+              >
+                read more
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -53,11 +45,13 @@ function Experiance() {
   return (
     <div className="relative">
       <div id="experience" className=" absolute -top-16 "></div>
-      <div className=" h-screen">
+      <div className=" min-h-screen">
         <h2 className=" text-subTPhone md:text-subT font-headline">
           Experience<span className=" text-highlight">.</span>
         </h2>
-        <div className="py-4">{experianceListUI}</div>
+        <div className="py-4 flex flex-col md:flex-row gap-4">
+          {experianceListUI}
+        </div>
       </div>
     </div>
   );
