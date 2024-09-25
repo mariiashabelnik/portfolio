@@ -37,6 +37,16 @@ function Start() {
             , who’s always hanging out with me while I work! */}
             {/* "Hi, I’m Mariia! I’m a frontend developer with experience in startup projects, working with JavaScript, React, Node.js, and SQL. I love combining my technical skills with my passion for art and design, especially through 3D projects. Let’s connect and see what we can create together—also, say hi to my mini poodle, Oreo, who’s always by my side in my creative space!" */}
           </p>
+          <div>
+            <a href="https://www.linkedin.com/in/mariia-shabelnik/">
+              <img
+                src="/img/icons8-linkedin.svg"
+                alt="oreo_logo"
+                className=" inline h-"
+              />
+              LinkedIn
+            </a>
+          </div>
         </div>{" "}
       </div>
     </div>
