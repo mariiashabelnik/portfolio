@@ -8,11 +8,11 @@ function Start() {
           <h1 className="text-titlePhone md:text-title md:leading-tight mb-2 font-ht">
             Hello, my name is Maria<span className=" text-highlight">.</span>
           </h1>
-          <h2 className="text-subTPhone md:text-subT font-tags">
+          <h2 className="text-subTPhone md:text-subT font-ht">
             I'm a<span className=" text-highlight"> Frontend Engineer</span>
           </h2>
-          <p className="text-base w-1/2 text-left my-4">
-            Hi, I’m Mariia! I’m a web developer with startup experience,
+          <p className="text-base md:w-1/2 w-full  text-left my-4 font-body">
+            I’m a Stockholm-based web developer with startup experience,
             building things with JavaScript, React, and Node.js. I’m also into
             3D design and art, and my mini poodle,{" "}
             <span className="font-black">Oreo</span>{" "}

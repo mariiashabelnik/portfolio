@@ -3,15 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      /* //3D logo font
-      logo3D: ["Nabla", "system-ui"], */
-
       //logo font
       logo: ["Sixtyfour", "system-ui"],
       //headline-title text
       ht: ["Sora", "system-ui"],
       //body text
-      sans: ["Jura", "system-ui"],
+      body: ["Jura", "system-ui"],
       //nav
       tags: ["Raleway", "system-ui"],
     },
@@ -39,7 +36,8 @@ export default {
       },
       //20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
       boxShadow: {
-        box: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;",
+        box: "8px 8px 16px #cacaca,-8px -8px 16px #f6f6f6",
+        // box: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;",
       },
 
       dropShadow: {

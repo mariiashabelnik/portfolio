@@ -6,28 +6,28 @@ function About() {
   const skills = useRecoilValue(skillsAtom);
 
   return (
-    <div className="relative">
-      <div id="about" className=" absolute -top-16   "></div>
+    <section className="relative">
+      <div id="about" className=" absolute    "></div>
       <div className=" min-h-screen flex items-center">
         <div>
-          <h2 className="mb-2 text-subTPhone md:text-subT font-headline">
-            About<span className=" text-highlight">.</span>
+          <h2 className="mb-6 text-subTPhone md:text-subT font-headline">
+            About me<span className=" text-highlight">.</span>
           </h2>
-          <div className="flex flex-col md:flex-row">
-            <div className="basis-2/3 text-base">
+          <div className="flex flex-col md:flex-row gap-6">
+            <article className="basis-6/12 text-base font-body">
               <p>
-                "I’m Mariia Shabelnik, a Stockholm-based developer passionate
-                about building innovative, secure digital experiences with a
-                focus on both frontend and backend technologies. With expertise
-                in JavaScript, React, TypeScript, and a keen eye for web design,
-                I create solutions that combine functionality with creativity. I
-                use Node.js for backend development and SQL for database
-                management, ensuring my applications are both robust and
-                scalable. I also have a deep passion for 3D design, which adds a
-                unique, immersive dimension to my work. I thrive in
-                collaborative environments that encourage continuous learning
-                and value creative problem-solving. Let’s collaborate to push
-                the boundaries of digital innovation!"
+                "I’m a Stockholm-based developer passionate about building
+                innovative, secure digital experiences with a focus on both
+                frontend and backend technologies. With expertise in JavaScript,
+                React, TypeScript, and a keen eye for web design, I create
+                solutions that combine functionality with creativity. I use
+                Node.js for backend development and SQL for database management,
+                ensuring my applications are both robust and scalable. I also
+                have a deep passion for 3D design, which adds a unique,
+                immersive dimension to my work. I thrive in collaborative
+                environments that encourage continuous learning and value
+                creative problem-solving. Let’s collaborate to push the
+                boundaries of digital innovation!"
                 {/* As a prospective Frontend Developer, I seek a challenging career
                 opportunity in the IT industry, where I can collaborate with a
                 dynamic team, continually learn, and foster innovation. My
@@ -38,6 +38,13 @@ function About() {
                 contribute effectively to the growth of an organization. If you
                 think you've got an opening that I might like, let's connect 🔗 */}
               </p>
+            </article>
+            <div className="border ">
+              <img
+                className="rounded-3xl"
+                src="/public/img/ProfileMe.jpg"
+                alt="profile Image"
+              />
             </div>
             <div className=" basis-1/3">
               <h4 className="mb-2 text-subTMini">Languages:</h4>
@@ -50,7 +57,7 @@ function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -6,6 +6,7 @@ const experianceList = [
     title: "Netzero web",
     info: "Discover the intersection of sustainability and technology in my collaboration with Net0. As the creative force behind the UI/UX design, I meticulously crafted a seamless and visually appealing user experience. Bringing this vision to life, I also spearheaded the frontend development, using React to construct an intuitive and efficient system for Net0. Immerse yourself in the synergy of eco-conscious practices and cutting-edge technology as we navigate towards a greener future, one React component at a time.",
     img: ["/img/net0_0.png", "/img/net0_1.png", "/img/net0_2.png"],
+    previewImg: "/img/mockup_net0.png",
     tags: [
       "React",
       "Vite",
@@ -27,6 +28,7 @@ const experianceList = [
     img: ["/img/letsfly_1.png", "/img/letsfly_2.png", "/img/letsfly_3.png"],
     tags: ["React", "NextJS", "Wordpress", "GraphQL", "MySQL", "Tailwind"],
     link: "https://preview.letsfly.app/",
+    previewImg: "/img/mockup_net0.png",
   },
 ];
 
@@ -58,6 +60,8 @@ export const skillsAtom = atom({
       "TablePlus",
       "Trello",
       "Figma",
+      "Spline",
+      "Blender",
     ],
   },
 });
