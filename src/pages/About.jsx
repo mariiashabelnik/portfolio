@@ -1,23 +1,57 @@
 import { useRecoilValue } from "recoil";
 import Tags from "../components/Tags";
 import { skillsAtom } from "../store";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function About() {
   const skills = useRecoilValue(skillsAtom);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
 
   return (
     <section className="relative" aria-labelledby="about-heading">
-      <div id="about" className=" absolute    "></div>
-      <div className=" min-h-screen flex items-center">
-        <div>
-          <h2
+      <div id="about" className="absolute"></div>
+      <div className="min-h-screen flex items-center">
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
+          <motion.h2
+            variants={itemVariants}
             id="about-heading"
             className="mb-6 text-subTPhone md:text-subT font-headline"
           >
-            About me<span className=" text-highlight">.</span>
-          </h2>
-          <div className="flex flex-col md:flex-row gap-6">
-            <article className="basis-6/12 text-base font-body">
+            About me<span className="text-highlight">.</span>
+          </motion.h2>
+          <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6">
+            <motion.article variants={itemVariants} className="basis-6/12 text-base font-body">
               <p>
                 "I'm a Stockholm-based developer passionate about building
                 innovative, secure digital experiences with a focus on both
@@ -41,15 +75,15 @@ function About() {
                 contribute effectively to the growth of an organization. If you
                 think you've got an opening that I might like, let's connect 🔗 */}
               </p>
-            </article>
-            <figure className="border">
+            </motion.article>
+            <motion.figure variants={itemVariants} className="border">
               <img
                 className="rounded-3xl"
                 src="/img/ProfileMe.jpg"
                 alt="Mariia Shabelnik's profile photo"
               />
-            </figure>
-            <aside className="basis-1/3" aria-labelledby="skills-heading">
+            </motion.figure>
+            <motion.aside variants={itemVariants} className="basis-1/3" aria-labelledby="skills-heading">
               <h2 id="skills-heading" className="sr-only">
                 Skills and Technologies
               </h2>
@@ -71,9 +105,9 @@ function About() {
                 </h3>
                 <Tags listOfTags={skills.tools} />
               </section>
-            </aside>
-          </div>
-        </div>
+            </motion.aside>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

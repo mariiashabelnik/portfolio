@@ -4,7 +4,7 @@ import { useEffect } from "react";
 function Start() {
   const greeting = "Hello, my name is Maria.";
   const greetingArray = greeting.split("");
-  const role = "I'm a Frontend Engineer";
+  const role = "I'm a Frontend Engineer.";
   const roleArray = role.split("");
   
   const controls = useAnimation();
@@ -47,7 +47,6 @@ function Start() {
                 {letter}
               </motion.span>
             ))}
-            <span className="text-highlight">.</span>
           </h1>
           <h2 className="text-subTPhone md:text-subT font-ht">
             {roleArray.map((letter, index) => (
@@ -66,7 +65,6 @@ function Start() {
                 {letter}
               </motion.span>
             ))}
-            <span className="text-highlight">.</span>
           </h2>
           <motion.div
             initial={{ opacity: 0 }}
@@ -90,20 +88,6 @@ function Start() {
                 className="inline h-"
               />{" "}
               , is always in my creative space. Let's chat!
-              {/* Hi, I'm Mariia! I'm a developer who loves building functional,
-              user-friendly web experiences with a creative twist. I've been
-              working as a junior frontend engineer in startups, gaining hands-on
-              experience. I use JavaScript, React, Node.js, and SQL, and I'm
-              always exploring 3D design to add a little extra flair. Let's
-              connect and maybe you'll meet my mini poodle,{" "}
-              <span className="font-black">Oreo</span>{" "}
-              <img
-                src="/img/oreo-logo.png"
-                alt="oreo_logo"
-                className=" inline h-"
-              />{" "}
-              , who's always hanging out with me while I work! */}
-              {/* "Hi, I'm Mariia! I'm a frontend developer with experience in startup projects, working with JavaScript, React, Node.js, and SQL. I love combining my technical skills with my passion for art and design, especially through 3D projects. Let's connect and see what we can create together—also, say hi to my mini poodle, Oreo, who's always by my side in my creative space!" */}
             </p>
             <div>
               <a
@@ -120,7 +104,7 @@ function Start() {
               </a>
             </div>
           </motion.div>
-        </div>{" "}
+        </div>
       </div>
     </div>
   );
