@@ -41,7 +41,7 @@ const experianceList = [
     info: "As a board member of DataTjej, I'm actively involved in shaping the future of this non-profit organization that supports women and non-binary individuals in tech. Currently leading the development of a new website using Next.js and Tailwind CSS, focusing on creating a modern, accessible platform. The project includes automating connections to various solutions like our podcast and event management systems, streamlining our digital presence and member engagement.",
     img: ["/images/datatjej-placeholder.jpg"],
     previewImg: "/images/datatjej-placeholder.jpg",
-    tags: ["Next.js", "Tailwind CSS", "Board Member", "Web Development", "Automation"],
+    tags: ["Board Member", "Next.js", "Tailwind CSS", "Prisma","TypeScript", "Web Development", "Automation"],
     link: "https://datatjej.se",
     sortOrder: 1
   },
