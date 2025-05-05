@@ -5,12 +5,14 @@ import ExperianceDetail from "./pages/ExperienceDetail";
 import FullPage from "./pages/FullPage";
 import { RecoilRoot } from "recoil";
 import ScrollToAnchor from "./components/ScrollToAnchor";
+import AnimatedBackground from "./components/AnimatedBackground";
 
 function App() {
   return (
-    <div className=" text-gray-600 ">
+    <div className="text-gray-600">
+      <AnimatedBackground />
       <RecoilRoot>
-        <main className=" min-h-screen">
+        <main className="min-h-screen">
           <Header />
           <ScrollToAnchor />
           <Routes>
