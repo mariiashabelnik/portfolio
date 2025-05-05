@@ -9,10 +9,17 @@ function ScrollToAnchor() {
   // https://jasonwatmore.com/react-router-v6-listen-to-location-route-change-without-history-listen
   useEffect(() => {
     if (location.hash) {
-      lastHash.current = location.hash.slice(1); // safe hash for further use after navigation
+      lastHash.current = location.hash.slice(1);
     }
 
-    if (lastHash.current && document.getElementById(lastHash.current)) {
+    if (lastHash.current === "contact") {
+      // Scroll to bottom of the page
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth"
+      });
+      lastHash.current = "";
+    } else if (lastHash.current && document.getElementById(lastHash.current)) {
       setTimeout(() => {
         document
           .getElementById(lastHash.current)
