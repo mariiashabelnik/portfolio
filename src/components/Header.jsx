@@ -20,20 +20,22 @@ function Header() {
 
   const menuUI = menu.map((item) => {
     let className = "drop-shadow-doublelight hover:drop-shadow-active";
-    console.log(location);
     if (`/${location.hash}` === item.link) {
-      className += " text-white  ";
+      className += " text-white";
     } else {
       className += " text-gray-500";
     }
     return (
-      <li className="my-10 text-xl md:my-0 md:text-base " key={item.link}>
+      <li className="my-10 text-xl md:my-0 md:text-base" key={item.link}>
         <Link
           className={className}
           onClick={() => {
             setOpen(false);
           }}
           to={item.link}
+          aria-current={
+            location.hash === item.link.slice(2) ? "page" : undefined
+          }
         >
           {item.title}
         </Link>
@@ -74,27 +76,54 @@ function Header() {
   return (
     <>
       {isOpen && (
-        <div className={overlayMenu.join(" ")}>
-          <div className=" h-[calc(100vh-20rem)]  flex flex-col justify-center">
-            <ul>{menuUI}</ul>
+        <nav
+          className={overlayMenu.join(" ")}
+          aria-label="Mobile navigation menu"
+          role="navigation"
+        >
+          <div className="h-[calc(100vh-20rem)] flex flex-col justify-center">
+            <ul role="menu" aria-label="Mobile menu items">
+              {menuUI}
+            </ul>
           </div>
-        </div>
+        </nav>
       )}
       <header className={headerClasses.join(" ")}>
-        <div className="container mx-auto h-full max-w-7xl ">
-          <nav className="flex items-center h-full px-10 ">
-            <div className="flex-none text-3xl md:text-4xl font-logo text-[#6d6d6d] ">
-              <Link className={logoClasses.join(" ")} to="/#start">
+        <div className="container mx-auto h-full max-w-7xl">
+          <nav
+            className="flex items-center h-full px-10"
+            aria-label="Main navigation"
+            role="navigation"
+          >
+            <div className="flex-none text-3xl md:text-4xl font-logo text-[#6d6d6d]">
+              <Link
+                className={logoClasses.join(" ")}
+                to="/#start"
+                aria-label="Home"
+              >
                 MS
               </Link>
             </div>
 
             <div className="grow"></div>
-            <div className="flex-none hidden md:block ">
-              <ul className="flex flex-row gap-4 text-lg">{menuUI}</ul>
+            <div className="flex-none hidden md:block">
+              <ul
+                className="flex flex-row gap-4 text-lg"
+                role="menu"
+                aria-label="Main menu items"
+              >
+                {menuUI}
+              </ul>
             </div>
             <div className="flex-none block md:hidden">
-              <Hamburger toggled={isOpen} toggle={setOpen} duration={0.9} />
+              <Hamburger
+                toggled={isOpen}
+                toggle={setOpen}
+                duration={0.9}
+                aria-label="Toggle mobile menu"
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+              />
             </div>
           </nav>
         </div>

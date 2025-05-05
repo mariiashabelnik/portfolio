@@ -6,17 +6,20 @@ function About() {
   const skills = useRecoilValue(skillsAtom);
 
   return (
-    <section className="relative">
+    <section className="relative" aria-labelledby="about-heading">
       <div id="about" className=" absolute    "></div>
       <div className=" min-h-screen flex items-center">
         <div>
-          <h2 className="mb-6 text-subTPhone md:text-subT font-headline">
+          <h2
+            id="about-heading"
+            className="mb-6 text-subTPhone md:text-subT font-headline"
+          >
             About me<span className=" text-highlight">.</span>
           </h2>
           <div className="flex flex-col md:flex-row gap-6">
             <article className="basis-6/12 text-base font-body">
               <p>
-                "I’m a Stockholm-based developer passionate about building
+                "I'm a Stockholm-based developer passionate about building
                 innovative, secure digital experiences with a focus on both
                 frontend and backend technologies. With expertise in JavaScript,
                 React, TypeScript, and a keen eye for web design, I create
@@ -26,7 +29,7 @@ function About() {
                 have a deep passion for 3D design, which adds a unique,
                 immersive dimension to my work. I thrive in collaborative
                 environments that encourage continuous learning and value
-                creative problem-solving. Let’s collaborate to push the
+                creative problem-solving. Let's collaborate to push the
                 boundaries of digital innovation!"
                 {/* As a prospective Frontend Developer, I seek a challenging career
                 opportunity in the IT industry, where I can collaborate with a
@@ -39,21 +42,36 @@ function About() {
                 think you've got an opening that I might like, let's connect 🔗 */}
               </p>
             </article>
-            <div className="border ">
+            <figure className="border">
               <img
                 className="rounded-3xl"
                 src="/public/img/ProfileMe.jpg"
-                alt="profile Image"
+                alt="Mariia Shabelnik's profile photo"
               />
-            </div>
-            <div className=" basis-1/3">
-              <h4 className="mb-2 text-subTMini">Languages:</h4>
-              <Tags listOfTags={skills.languages} />
-              <h4 className="my-2 text-subTMini">Frameworks:</h4>{" "}
-              <Tags listOfTags={skills.frameworks} />
-              <h4 className="my-2 text-subTMini">Tools I use:</h4>{" "}
-              <Tags listOfTags={skills.tools} />
-            </div>
+            </figure>
+            <aside className="basis-1/3" aria-labelledby="skills-heading">
+              <h2 id="skills-heading" className="sr-only">
+                Skills and Technologies
+              </h2>
+              <section aria-labelledby="languages-heading">
+                <h3 id="languages-heading" className="mb-2 text-subTMini">
+                  Languages:
+                </h3>
+                <Tags listOfTags={skills.languages} />
+              </section>
+              <section aria-labelledby="frameworks-heading">
+                <h3 id="frameworks-heading" className="my-2 text-subTMini">
+                  Frameworks:
+                </h3>
+                <Tags listOfTags={skills.frameworks} />
+              </section>
+              <section aria-labelledby="tools-heading">
+                <h3 id="tools-heading" className="my-2 text-subTMini">
+                  Tools I use:
+                </h3>
+                <Tags listOfTags={skills.tools} />
+              </section>
+            </aside>
           </div>
         </div>
       </div>
