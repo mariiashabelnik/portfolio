@@ -50,11 +50,11 @@ function ExperianceDetail() {
       </button>
       <div className="flex flex-col">
         <div className="flex-1">
-          <h1 className=" text-subTPhone md:text-subT font-headline">
+          <h1 className="text-subTPhone md:text-subT font-headline">
             Project: {myProject.title}
           </h1>
         </div>
-        <div className="flex-1 mt-2 mb-6">
+        <div className="flex-1 mt-2 mb-6 min-h-[80px]">
           <Tags listOfTags={myProject.tags} />
         </div>
       </div>
@@ -75,9 +75,11 @@ function ExperianceDetail() {
             )}
           />
         </div>
-        <div className="flex-1 text-base">
-          {myProject.info}
-          <div className=" drop-shadow-doublelight hover:drop-shadow-light my-2 text-end">
+        <div className="flex-1 text-base min-h-[300px] flex flex-col">
+          <div className="flex-1">
+            {myProject.info}
+          </div>
+          <div className="drop-shadow-doublelight hover:drop-shadow-light my-2 text-end">
             {linkUI}
           </div>
         </div>

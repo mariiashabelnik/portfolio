@@ -26,7 +26,7 @@ function Experiance() {
           <figure className="basis-5/12">
             <img
               className="w-full"
-              src={item.previewImg}
+              src={item.img[0]}
               alt={`Preview of ${item.title} project`}
             />
           </figure>
