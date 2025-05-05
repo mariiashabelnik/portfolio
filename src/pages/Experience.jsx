@@ -2,15 +2,46 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { projectsAtom } from "../store";
 import Tags from "../components/Tags";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function Experiance() {
   const experianceList = useRecoilValue(projectsAtom);
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
 
   const experianceListUI = experianceList.map((item, key) => {
     const even = key % 2;
 
     return (
-      <article
+      <motion.article
+        ref={ref}
+        variants={itemVariants}
         className={`flex-1 gap-4 mb-12 bg-[#f0f0f3] border shadow-box ${
           (even === 0 && "rounded-tl-3xl rounded-br-3xl") ||
           "rounded-tr-3xl rounded-bl-3xl"
@@ -41,7 +72,7 @@ function Experiance() {
             </div>
           </div>
         </div>
-      </article>
+      </motion.article>
     );
   });
 
@@ -59,9 +90,15 @@ function Experiance() {
         >
           Projects and experience<span className="text-highlight">.</span>
         </h2>
-        <div className="py-4 grid grid-cols-1 md:grid-cols-2 gap-8" role="list">
+        <motion.div
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="py-4 grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
           {experianceListUI}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
