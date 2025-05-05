@@ -58,8 +58,8 @@ function ExperianceDetail() {
           <Tags listOfTags={myProject.tags} />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="flex-1">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="w-full md:w-1/2">
           <ImageGallery
             showThumbnails={false}
             showBullets={true}
@@ -75,9 +75,10 @@ function ExperianceDetail() {
             )}
           />
         </div>
-        <div className="flex-1 text-base min-h-[300px] flex flex-col">
+        <div className="w-full md:w-1/2 flex flex-col min-h-[300px]">
           <div className="flex-1">
-            {myProject.info}
+            <h2 className="text-xl font-semibold mb-4">{myProject.subtitle}</h2>
+            <p className="text-base leading-relaxed">{myProject.description}</p>
           </div>
           <div className="drop-shadow-doublelight hover:drop-shadow-light my-2 text-end">
             {linkUI}

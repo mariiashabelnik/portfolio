@@ -57,9 +57,9 @@ function Experiance() {
           id="projects-heading"
           className="text-subTPhone md:text-subT font-headline mb-6"
         >
-          Projects<span className="text-highlight">.</span>
+          Projects and experience<span className="text-highlight">.</span>
         </h2>
-        <div className="py-4 flex flex-col md:flex-row gap-10" role="list">
+        <div className="py-4 grid grid-cols-1 md:grid-cols-2 gap-8" role="list">
           {experianceListUI}
         </div>
       </div>
