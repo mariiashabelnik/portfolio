@@ -45,7 +45,7 @@ function About() {
             <figure className="border">
               <img
                 className="rounded-3xl"
-                src="/public/img/ProfileMe.jpg"
+                src="/img/ProfileMe.jpg"
                 alt="Mariia Shabelnik's profile photo"
               />
             </figure>
