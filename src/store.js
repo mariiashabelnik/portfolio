@@ -44,6 +44,17 @@ const experianceList = [
     tags: ["Next.js", "Tailwind CSS", "Board Member", "Web Development", "Automation"],
     link: "https://datatjej.se",
     sortOrder: 1
+  },
+  {
+    id: 5,
+    title: "DataTjej",
+    subtitle: "IT Support & User Management",
+    info: "As part of the DataTjej board, I manage user access and IT support for our growing community of over 6000 members. I handle user permissions, group management, and ensure secure access to our various platforms. This includes setting up and maintaining appropriate access levels for different user groups, troubleshooting technical issues, and implementing security best practices. I also work on automating user management processes and maintaining our IT infrastructure using Google Cloud services to support our community's needs.",
+    img: ["/images/datatjej-it-placeholder.jpg"],
+    previewImg: "/images/datatjej-it-placeholder.jpg",
+    tags: ["User Management", "IT Support", "Access Control", "Security", "Automation", "Community Management", "Google Cloud"],
+    link: "https://datatjej.se",
+    sortOrder: 4
   }
 ];
 
