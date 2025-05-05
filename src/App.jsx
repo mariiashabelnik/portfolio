@@ -5,7 +5,6 @@ import ExperianceDetail from "./pages/ExperienceDetail";
 import FullPage from "./pages/FullPage";
 import { RecoilRoot } from "recoil";
 import ScrollToAnchor from "./components/ScrollToAnchor";
-/* import Spline from "@splinetool/react-spline"; */
 
 function App() {
   return (
@@ -14,9 +13,6 @@ function App() {
         <main className=" min-h-screen">
           <Header />
           <ScrollToAnchor />
-          {/* <div className="w-full h-screen">
-            <Spline scene="https://prod.spline.design/magHjLGpPc2Y1jP4/scene.splinecode" />
-          </div> */}
           <Routes>
             <Route path="/" element={<FullPage />} />
             {/* <Route path="/experience" element={<Experience />} />
